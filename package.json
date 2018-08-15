@@ -1,0 +1,27 @@
+{
+  "name": "vue-badger-accordion",
+  "version": "1.0.0",
+  "description": "Badger-Accordion Component for Vue 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanderb/vue-badger-accordion.git"
+  },
+  "keywords": [
+    "vue",
+    "accordion",
+    "collapse"
+  ],
+  "author": "Freerk van Zeijl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vanderb/vue-badger-accordion/issues"
+  },
+  "homepage": "https://github.com/vanderb/vue-badger-accordion#readme",
+  "dependencies": {
+    "badger-accordion": "^1.1.2"
+  }
+}
