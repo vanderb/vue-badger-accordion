@@ -1,6 +1,6 @@
 {
   "name": "vue-badger-accordion",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Badger-Accordion Component for Vue 2.0",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vanderb/vue-badger-accordion#readme",
   "dependencies": {
-    "badger-accordion": "^1.1.2"
+    "badger-accordion": "^1.1.2",
+    "vue": "^2.5.17"
   }
 }

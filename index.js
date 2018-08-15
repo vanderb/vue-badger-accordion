@@ -1,7 +1,5 @@
 import BadgerAccordion from './src/BadgerAccordion'
 import BadgerAccordionItem from './src/BadgerAccordionItem'
 
-module.exports = {
-    BadgerAccordion, 
-    BadgerAccordionItem
-};
+export const BadgerAccordion = BadgerAccordion
+export const BadgerAccordionItem = BadgerAccordion
