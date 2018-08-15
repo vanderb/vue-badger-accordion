@@ -23,15 +23,15 @@ npm install vue-badger-accordion --save
 import {BadgerAccordion, BadgerAccordionItem} from 'vue-badger-accordion'
 ```
 
-#### Implement globaly
+#### Implement globally
 
 ```javascript
-Vue.component('badgerAccordion', BadgerAccordion)
+Vue.component('BadgerAccordion', BadgerAccordion)
 Vue.component('BadgerAccordionItem', BadgerAccordionItem)
 ```
 
 
-#### Implement localy
+#### Implement locally
 
 ```javascript
 export default {
