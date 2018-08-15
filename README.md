@@ -1,6 +1,14 @@
 # vue-badger-accordion
 Badger-Accordion Component for Vue 2.0
 
+This package is a wrapper for the badger-accordion made by [Stuart Nelson](https://github.com/stuartjnelson)
+
+Badger-Accordion-Repository:
+
+https://github.com/stuartjnelson/badger-accordion
+
+---
+
 ## Installation
 
 ### Install package
