@@ -1,5 +1,5 @@
-import BadgerAccordion from './src/BadgerAccordion'
-import BadgerAccordionItem from './src/BadgerAccordionItem'
+import ImportBadgerAccordion from './src/BadgerAccordion'
+import ImportBadgerAccordionItem from './src/BadgerAccordionItem'
 
-export const BadgerAccordion = BadgerAccordion
-export const BadgerAccordionItem = BadgerAccordion
+export const BadgerAccordion = ImportBadgerAccordion
+export const BadgerAccordionItem = ImportBadgerAccordionItem
