@@ -20,10 +20,31 @@
 </template>
 
 <script>
-export default {}
+export default {
+    name: 'BadgerAccordionItem'
+}
 </script>
 
 <style lang="scss">
+
+	.badger-accordion__panel {
+        max-height: 75vh;
+        overflow: hidden; 
+    
+        // scss-lint:disable ImportantRule        
+        &.-ba-is-hidden {            
+            max-height: 0 !important;        
+        }
+    }    
+    
+    // transition is added via `badger-accordion--initalised` to stop animation on initalition    
+    .badger-accordion--initalised {
+
+        .badger-accordion__panel {
+            transition: max-height ease-in-out 0.2s;
+        }
+    }
+
     .badger-accordion__header {
 
         .js-badger-accordion-header {
@@ -60,7 +81,4 @@ export default {}
 
     }
 
-    .badger-accordion__panel {
-        max-height: 0;
-    }
 </style>

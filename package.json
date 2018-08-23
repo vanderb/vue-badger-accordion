@@ -1,6 +1,6 @@
 {
   "name": "vue-badger-accordion",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Badger-Accordion Component for Vue 2.0",
   "main": "index.js",
   "scripts": {
