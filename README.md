@@ -58,7 +58,7 @@ export default {
 </badger-accordion>
 ```
 
-Note: You can replace <template> with all regular html-tags, just remember to add the slot-parameter.
+Note: You can replace the template-tag with all regular html-tags, just remember to add the slot-parameter.
 
 ## Options
 
