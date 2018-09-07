@@ -3,18 +3,14 @@
 </template>
 
 <script>
-import Vue from "vue";
-
 import BadgerAccordion from 'badger-accordion';
 
-Vue.component('BadgerAccordionItem', require('./BadgerAccordionItem.vue'))
-
-export default Vue.extend({
+export default {
     name: 'BadgerAccordion',
     props: ['options'],
     data() {
         return {
-            accordion: null,
+            accordion: null
         }
     },
     mounted() {
@@ -31,7 +27,7 @@ export default Vue.extend({
         calculateAllPanelsHeight() { this.accordion.calculateAllPanelsHeight() },
         calculatePanelHeight() { this.accordion.calculatePanelHeight() }
     }
-});
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
