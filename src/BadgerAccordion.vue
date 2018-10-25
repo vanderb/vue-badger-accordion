@@ -3,18 +3,22 @@
 </template>
 
 <script>
-import BadgerAccordion from 'badger-accordion';
+import BadgerAccordion from 'badger-accordion'
 
 export default {
     name: 'BadgerAccordion',
     props: ['options'],
     data() {
         return {
-            accordion: null
+            accordion: null,
+            itemsReady: false
         }
     },
     mounted() {
-        this.accordion = new BadgerAccordion(this.$refs.badger, (this.options || {})); 
+        // On child-item rendered initiate badger-accordion
+        this.$on('item:ready', () => {
+            this.accordion = new BadgerAccordion(this.$refs.badger, (this.options || {}))
+        });
     },
     methods: {
         init() { this.accordion.init() },
@@ -29,6 +33,3 @@ export default {
     }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss"></style>

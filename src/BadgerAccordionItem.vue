@@ -21,7 +21,11 @@
 
 <script>
 export default {
-    name: 'BadgerAccordionItem'
+    name: 'BadgerAccordionItem',
+    mounted() {
+        // If item rendered emit readyness to parent
+        this.$parent.$emit('item:ready');
+    }
 }
 </script>
 
