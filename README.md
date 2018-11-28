@@ -73,6 +73,28 @@ A list of available options could be found in the badger-accordion repository
 
 https://github.com/stuartjnelson/badger-accordion#options
 
+## Custom state-indicators/-icons
+
+By default the Accordion-Header shows an state-indicator (+/-).
+You can easily disable or replace them with images or your favorite icon-font by set the icon-property.
+
+#### Set Icons
+
+*with font-library e.g. font-awesome*
+```html
+<badger-accordion :icons="{opened: '<i class="fas fa-chevron-down"></i>', closed: '<i class="fas fa-chevron-up"></i>'}">
+```
+*with images*
+```html
+<badger-accordion :icons="{opened: '<img src="opened.png">', closed: '<img src="closed.png">'}">
+```
+
+#### Disable Icons
+
+```html
+<badger-accordion :icons="false">
+```
+
 ## Methods
 
 All Methods of badger-accordion are also available. Just add a ref to you accordion and you can access them.

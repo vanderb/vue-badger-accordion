@@ -6,7 +6,7 @@
                 <div class="badger-accordion-toggle">
                     <slot name="header">Collapse-Title</slot>
                 </div>
-                <span class="badger-toggle-indicator"></span>
+                <span class="badger-toggle-indicator" v-html="icon"></span>
             </div>
         </div> 
 
@@ -25,6 +25,17 @@ export default {
     mounted() {
         // If item rendered emit readyness to parent
         this.$parent.$emit('item:ready');
+    },
+    computed: {
+        iconOpened() {
+            return this.$parent.icons ? this.$parent.icons.opened : '';            
+        },
+        iconClosed() {
+            return this.$parent.icons ? this.$parent.icons.closed : '';
+        },
+        icon() {
+            return this.$parent.opened ? this.iconOpened : this.iconClosed;
+        }
     }
 }
 </script>
@@ -64,21 +75,8 @@ export default {
                 flex: 0 0 10%;
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-end;
                 cursor: pointer;
-
-                &:before {
-                    content: '+';
-                    display: flex;
-                    height: 22px;
-                    width: 22px;
-                    align-items: center;
-                    justify-content: center;
-                }
-            }
-
-            &.-ba-is-active .badger-toggle-indicator:before {
-                content: '-'
             }
 
         }
