@@ -22,6 +22,19 @@ export default {
             itemsReady: false
         }
     },
+    watch: {
+      "accordion.states": {
+          handler(states) {
+              this.calculateAllPanelsHeight();
+              this.$children.forEach((child, n) => {
+                  if(typeof states[n] == 'object') {
+                      child.changeState(states[n].state == 'open');
+                  }
+              });
+          },
+          deep:true
+      }
+    },
     created() {
         // On child-item rendered initiate badger-accordion
         this.$on('item:ready', () => {
@@ -31,22 +44,14 @@ export default {
 
     methods: {
         init() { this.accordion.init() },
-        getState() { return this.accordion.getState() },
-        open() { this.accordion.open() },
-        close() { this.accordion.close() },
-        togglePanel() { this.accordion.togglePanel() },
+        getState(headerIds = []) { return this.accordion.getState(headerIds) },
+        open(headerIndex) { this.accordion.open(headerIndex) },
+        close(headerIndex) { this.accordion.close(headerIndex) },
+        togglePanel(animationAction, headerIndex) { this.accordion.togglePanel(animationAction, headerIndex) },
         openAll() { this.accordion.openAll() },
         closeAll() { this.accordion.closeAll() },
         calculateAllPanelsHeight() { this.accordion.calculateAllPanelsHeight() },
-        calculatePanelHeight() { this.accordion.calculatePanelHeight() }
-    },
-    computed: {
-        opened() {
-            if(this.accordion) {
-                return typeof this.accordion.states.find(item => item.state == 'open') == 'object';
-            }
-            return false;
-        }
+        calculatePanelHeight(panel) { this.accordion.calculatePanelHeight(panel) }
     }
 };
 </script>

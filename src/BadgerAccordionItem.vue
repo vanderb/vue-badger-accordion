@@ -26,15 +26,20 @@ export default {
         // If item rendered emit readyness to parent
         this.$parent.$emit('item:ready');
     },
+    data() {
+        return {
+            opened: false
+        }
+    },
     computed: {
         iconOpened() {
-            return this.$parent.icons ? this.$parent.icons.opened : '';            
+            return this.$parent.icons ? this.$parent.icons.opened : '';
         },
         iconClosed() {
             return this.$parent.icons ? this.$parent.icons.closed : '';
         },
         icon() {
-            return this.$parent.opened ? this.iconOpened : this.iconClosed;
+            return this.opened ? this.iconOpened : this.iconClosed;
         }
     }
 }
