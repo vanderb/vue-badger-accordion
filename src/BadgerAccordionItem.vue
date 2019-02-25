@@ -57,8 +57,8 @@ export default {
         }
     }    
     
-    // transition is added via `badger-accordion--initalised` to stop animation on initalition    
-    .badger-accordion--initalised {
+    // transition is added via `badger-accordion--initialized` to stop animation on initalition    
+    .badger-accordion--initialized {
 
         .badger-accordion__panel {
             transition: max-height ease-in-out 0.2s;
