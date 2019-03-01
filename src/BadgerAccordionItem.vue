@@ -31,6 +31,11 @@ export default {
             opened: false
         }
     },
+    methods: {
+        changeState(state) {
+            this.opened = state;
+        }
+    },
     computed: {
         iconOpened() {
             return this.$parent.icons ? this.$parent.icons.opened : '';
@@ -87,5 +92,4 @@ export default {
         }
 
     }
-
 </style>

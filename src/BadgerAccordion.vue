@@ -5,6 +5,19 @@
 <script>
 import BadgerAccordion from 'badger-accordion'
 
+// Helper-function to unwrap child-component-wrapper
+function unwrap(wrapper) {
+    // place childNodes in document fragment
+    var docFrag = document.createDocumentFragment();
+    while (wrapper.firstChild) {
+        var child = wrapper.removeChild(wrapper.firstChild);
+        docFrag.appendChild(child);
+    }
+
+    // replace wrapper with document fragment
+    wrapper.parentNode.replaceChild(docFrag, wrapper);
+}
+
 export default {
     name: 'BadgerAccordion',
     props: {
@@ -38,7 +51,11 @@ export default {
     created() {
         // On child-item rendered initiate badger-accordion
         this.$on('item:ready', () => {
+            // Unwrap child-wrapper due issues with badger-accordion
+            unwrap(this.$refs.badger.querySelector('.badger-accordion-item'));
+            // Init badger-accordion if child-component is loaded
             this.accordion = new BadgerAccordion(this.$refs.badger, (this.options || {}))
+            this.$forceUpdate();
         });
     },
 
