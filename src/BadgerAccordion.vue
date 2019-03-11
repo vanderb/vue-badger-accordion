@@ -1,5 +1,5 @@
 <template>
-    <div class="component-badger-accordion" ref="badger"><slot></slot></div>
+    <dl class="component-badger-accordion" ref="badger"><slot></slot></dl>
 </template>
 
 <script>
@@ -26,7 +26,7 @@ export default {
             default() {return {}}
         },
         icons: {
-            default() {return {opened: '-', closed: '+'} } 
+            default() {return {opened: '-', closed: '+'} }
         }
     },
     data() {
