@@ -1,6 +1,6 @@
 <template>
     <div class="badger-accordion-item">
-        
+
         <div class="badger-accordion__header">
             <div class="js-badger-accordion-header">
                 <div class="badger-accordion-toggle">
@@ -8,7 +8,7 @@
                 </div>
                 <span class="badger-toggle-indicator" v-html="icon"></span>
             </div>
-        </div> 
+        </div>
 
         <div class="badger-accordion__panel js-badger-accordion-panel">
             <div class="js-badger-accordion-panel-inner">
@@ -46,23 +46,28 @@ export default {
         icon() {
             return this.opened ? this.iconOpened : this.iconClosed;
         }
+    },
+    watch: {
+        opened(newValue) {
+            this.$emit(newValue ? 'open' : 'close')
+        }
     }
 }
 </script>
 
 <style lang="scss">
 
-	.badger-accordion__panel {
+    .badger-accordion__panel {
         max-height: 75vh;
-        overflow: hidden; 
-    
-        // scss-lint:disable ImportantRule        
-        &.-ba-is-hidden {            
-            max-height: 0 !important;        
+        overflow: hidden;
+
+        // scss-lint:disable ImportantRule
+        &.-ba-is-hidden {
+            max-height: 0 !important;
         }
-    }    
-    
-    // transition is added via `badger-accordion--initialized` to stop animation on initalition    
+    }
+
+    // transition is added via `badger-accordion--initialized` to stop animation on initalition
     .badger-accordion--initialized {
 
         .badger-accordion__panel {
@@ -80,7 +85,7 @@ export default {
                 flex: 0 0 90%;
                 cursor: pointer;
             }
-            
+
             .badger-toggle-indicator {
                 flex: 0 0 10%;
                 display: flex;

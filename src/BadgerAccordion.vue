@@ -26,7 +26,7 @@ export default {
             default() {return {}}
         },
         icons: {
-            default() {return {opened: '-', closed: '+'} } 
+            default() {return {opened: '-', closed: '+'} }
         }
     },
     data() {
