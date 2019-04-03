@@ -30,7 +30,6 @@ Vue.component('BadgerAccordion', BadgerAccordion)
 Vue.component('BadgerAccordionItem', BadgerAccordionItem)
 ```
 
-
 #### Implement locally
 
 ```javascript
@@ -72,6 +71,31 @@ Options can be implemented by component property "option".
 A list of available options could be found in the badger-accordion repository
 
 https://github.com/stuartjnelson/badger-accordion#options
+
+## Events
+You can handle open/close-Events for each AccordionItem
+```html
+<badger-accordion>
+    <badger-accordion-item @open="onOpenItem" @close="onCloseItem">
+        <template slot="header">First Accordion Header</template>    
+        <template slot="content">First Accordion Content</template>  
+    </badger-accordion-item>
+</badger-accordion>
+```
+
+```javascript
+methods: {
+    ...
+    onOpenItem() {
+        // Item opened
+    },
+    onCloseItem() {
+        // Item closed
+    }
+}
+```
+
+Thanks to  [elbojoloco](https://github.com/elbojoloco) for that change.
 
 ## Custom state-indicators/-icons
 
