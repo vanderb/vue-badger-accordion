@@ -1,6 +1,7 @@
 <template>
     <div class="badger-accordion-item">
 
+
         <dt class="badger-accordion__header">
             <div class="js-badger-accordion-header">
                 <div class="badger-accordion-toggle">
@@ -46,13 +47,18 @@ export default {
         icon() {
             return this.opened ? this.iconOpened : this.iconClosed;
         }
+    },
+    watch: {
+        opened(newValue) {
+            this.$emit(newValue ? 'open' : 'close')
+        }
     }
 }
 </script>
 
 <style lang="scss">
 
-	.badger-accordion__panel {
+    .badger-accordion__panel {
         max-height: 75vh;
         overflow: hidden;
 
