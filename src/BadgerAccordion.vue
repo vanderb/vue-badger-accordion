@@ -1,5 +1,5 @@
 <template>
-    <div class="component-badger-accordion" ref="badger"><slot></slot></div>
+    <dl class="component-badger-accordion" ref="badger"><slot></slot></dl>
 </template>
 
 <script>
