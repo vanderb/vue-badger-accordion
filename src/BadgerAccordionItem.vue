@@ -1,20 +1,21 @@
 <template>
     <div class="badger-accordion-item">
 
-        <div class="badger-accordion__header">
+
+        <dt class="badger-accordion__header">
             <div class="js-badger-accordion-header">
                 <div class="badger-accordion-toggle">
                     <slot name="header">Collapse-Title</slot>
                 </div>
                 <span class="badger-toggle-indicator" v-html="icon"></span>
             </div>
-        </div>
+        </dt>
 
-        <div class="badger-accordion__panel js-badger-accordion-panel">
+        <dd class="badger-accordion__panel js-badger-accordion-panel">
             <div class="js-badger-accordion-panel-inner">
                 <slot name="content"></slot>
             </div>
-        </div>
+        </dd>
 
     </div>
 </template>
