@@ -1,7 +1,6 @@
 <template>
     <div class="badger-accordion-item">
 
-
         <dt class="badger-accordion__header">
             <div class="js-badger-accordion-header">
                 <div class="badger-accordion-toggle">
