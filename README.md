@@ -108,6 +108,11 @@ You can easily disable or replace them with images or your favorite icon-font by
 ```html
 <badger-accordion :icons="{opened: '<i class="fas fa-chevron-down"></i>', closed: '<i class="fas fa-chevron-up"></i>'}">
 ```
+```html
+
+```
+
+
 *with images*
 ```html
 <badger-accordion :icons="{opened: '<img src="opened.png">', closed: '<img src="closed.png">'}">
