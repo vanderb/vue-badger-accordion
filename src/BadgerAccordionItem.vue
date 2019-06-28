@@ -6,7 +6,7 @@
                 <div class="badger-accordion-toggle">
                     <slot name="header">Collapse-Title</slot>
                 </div>
-                <span class="badger-toggle-indicator" v-html="icon"></span>
+                <span class="badger-toggle-indicator" :is="iconLoaded"></span>
             </div>
         </dt>
 
@@ -20,42 +20,66 @@
 </template>
 
 <script>
-export default {
-    name: 'BadgerAccordionItem',
-    mounted() {
-        // If item rendered emit readyness to parent
-        this.$parent.$emit('item:ready');
-    },
-    data() {
-        return {
-            opened: false
-        }
-    },
-    methods: {
-        changeState(state) {
-            this.opened = state;
-        }
-    },
-    computed: {
-        iconOpened() {
-            return this.$parent.icons ? this.$parent.icons.opened : '';
+    import Vue from 'vue'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { fas } from '@fortawesome/free-solid-svg-icons'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+    library.add(fas);
+
+    Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+    export default {
+        name: 'BadgerAccordionItem',
+        mounted() {
+            // If item rendered emit readyness to parent
+            this.$parent.$emit('item:ready');
         },
-        iconClosed() {
-            return this.$parent.icons ? this.$parent.icons.closed : '';
+        data() {
+            return {
+                opened: false
+            }
         },
-        icon() {
-            return this.opened ? this.iconOpened : this.iconClosed;
-        }
-    },
-    watch: {
-        opened(newValue) {
-            this.$emit(newValue ? 'open' : 'close')
+        methods: {
+            changeState(state) {
+                this.opened = state;
+            },
+            getIcon() {
+                return this.icon;
+            }
+        },
+        computed: {
+            iconOpened() {
+                return this.$parent.icons ? this.$parent.icons.opened : '';
+            },
+            iconClosed() {
+                return this.$parent.icons ? this.$parent.icons.closed : '';
+            },
+            icon() {
+                return this.opened ? this.iconOpened : this.iconClosed;
+            },
+            iconLoaded() {
+                return {
+                    template: '<span>'+ this.icon +'</span>'
+                }
+            }
+        },
+        watch: {
+            opened(newValue) {
+                this.$emit(newValue ? 'open' : 'close')
+            }
         }
     }
-}
 </script>
 
 <style lang="scss">
+
+    .component-badger-accordion {
+        .badger-accordion__panel {
+            max-height: 0;
+        }
+
+    }
 
     .badger-accordion__panel {
         max-height: 75vh;
