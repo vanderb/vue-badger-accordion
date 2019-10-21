@@ -6,7 +6,11 @@
                 <div class="badger-accordion-toggle">
                     <slot name="header">Collapse-Title</slot>
                 </div>
-                <span class="badger-toggle-indicator" :is="iconLoaded"></span>
+                <component
+                  v-if="icon !== '' && iconComponent"
+                  :is="iconComponent"
+                  :opened="opened"
+                  class="badger-toggle-indicator" />
             </div>
         </dt>
 
@@ -40,6 +44,13 @@
             }
         },
         computed: {
+            iconComponent() {
+              if (this.$parent.iconComponent) {
+                return this.$parent.iconComponent;
+              }
+
+              return this.iconLoaded;
+            },
             iconOpened() {
                 return this.$parent.icons ? this.$parent.icons.opened : '';
             },
@@ -51,8 +62,8 @@
             },
             iconLoaded() {
                 return {
-                    template: '<span>'+ this.icon +'</span>'
-                }
+                    template: '<span>' + this.icon + '</span>',
+                };
             }
         },
         watch: {
