@@ -3,14 +3,16 @@
 
         <dt class="badger-accordion__header">
             <div class="js-badger-accordion-header">
-                <div class="badger-accordion-toggle">
+                <button class="badger-accordion-toggle">
+                  <span class="badger-accordion-title">
                     <slot name="header">Collapse-Title</slot>
-                </div>
-                <component
-                  v-if="icon !== '' && iconComponent"
-                  :is="iconComponent"
-                  :opened="opened"
-                  class="badger-toggle-indicator" />
+                  </span>
+                  <component
+                    v-if="icon !== '' && iconComponent"
+                    :is="iconComponent"
+                    :opened="opened"
+                    class="badger-toggle-indicator" />
+                </button>
             </div>
         </dt>
 
@@ -104,22 +106,28 @@
     .badger-accordion__header {
 
         .js-badger-accordion-header {
-            display: flex;
-            align-items: center;
-
             .badger-accordion-toggle {
+              width: 100%;
+              background: transparent;
+              border: 0;
+              box-shadow: none;
+              display: flex;
+              align-items: center;
+
+              .badger-accordion-title {
                 flex: 0 0 90%;
                 cursor: pointer;
-            }
+                text-align: left;
+              }
 
-            .badger-toggle-indicator {
-                flex: 0 0 10%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                cursor: pointer;
+              .badger-toggle-indicator {
+                  flex: 0 0 10%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-end;
+                  cursor: pointer;
+              }
             }
-
         }
 
     }
