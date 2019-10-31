@@ -33,7 +33,10 @@
                 default() {
                     return {opened: '-', closed: '+'}
                 }
-            }
+            },
+            iconComponent: {
+              default: null
+            },
         },
         data() {
             return {

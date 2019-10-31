@@ -102,7 +102,7 @@ Thanks to  [elbojoloco](https://github.com/elbojoloco) for that change.
 By default the Accordion-Header shows an state-indicator (+/-).
 You can easily disable or replace them with images or your favorite icon-font by set the icon-property.
 
-#### Set Icons
+#### Set Icons - Basic
 
 *with font-library e.g. font-awesome*
 ```html
@@ -116,6 +116,40 @@ You can easily disable or replace them with images or your favorite icon-font by
 *with images*
 ```html
 <badger-accordion :icons="{opened: '<img src="opened.png">', closed: '<img src="closed.png">'}">
+```
+
+#### Set Icons - Advanced
+
+Sometimes you may want greater control of your the state icon renders. In this case you can pass a vue component in directly to the badger accordion:
+
+```js
+const MyComponent = {
+    template: `
+        <span class="my-icon">{{ opened ? 'I am open' : ' I am closed' }}</span>
+    `,
+    props: {
+        opened: {
+            type: Boolean,
+            default: false,
+        },
+    },
+};
+
+export default {
+    components: {
+        BadgerAccodion,
+        BadgerAccordionItem,
+    },
+    data() {
+        return {
+            iconComponent: MyComponent,
+        };
+    },
+}
+```
+
+```html
+<badger-accordion iconComponent="iconComponent"></badger-accordion>
 ```
 
 #### Disable Icons
