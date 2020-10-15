@@ -13,5 +13,11 @@ export default {
     exports: 'named'
   },
   external: ['core-js', 'badger-accordion', 'vue'],
-  plugins: [resolve(), commonjs(), vue(), scss(), babel()]
+  plugins: [
+    resolve(),
+    commonjs(),
+    vue(),
+    scss(),
+    babel({ babelHelpers: 'bundled' })
+  ]
 }
