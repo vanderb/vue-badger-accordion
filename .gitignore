@@ -1,5 +1,32 @@
-*.DS_Store
-.vscode
-.idea
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-error.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul/jest
+coverage
+
+# Dependency directories
 node_modules
+
+# Optional npm cache directory
+.npm
+
+# Editors
+.idea
+
+# Libs
+lib
+flow-typed
+
+# npm package lock
 package-lock.json
+yarn.lock
+
+.DS_Store

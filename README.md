@@ -1,4 +1,5 @@
 # vue-badger-accordion
+
 Badger-Accordion Component for Vue 2.0
 
 This package is a wrapper for the badger-accordion made by [Stuart Nelson](https://github.com/stuartjnelson)
@@ -20,7 +21,7 @@ npm install vue-badger-accordion --save
 ## Setup
 
 ```javascript
-import {BadgerAccordion, BadgerAccordionItem} from 'vue-badger-accordion'
+import { BadgerAccordion, BadgerAccordionItem } from 'vue-badger-accordion'
 ```
 
 #### Implement globally
@@ -34,10 +35,10 @@ Vue.component('BadgerAccordionItem', BadgerAccordionItem)
 
 ```javascript
 export default {
-    components: {
-        BadgerAccordion,
-        BadgerAccordionItem
-    }
+  components: {
+    BadgerAccordion,
+    BadgerAccordionItem
+  }
 }
 ```
 
@@ -45,15 +46,15 @@ export default {
 
 ```html
 <badger-accordion>
-    <badger-accordion-item>
-        <template slot="header">First Accordion Header</template>    
-        <template slot="content">First Accordion Content</template>  
-    </badger-accordion-item>
+  <badger-accordion-item>
+    <template slot="header">First Accordion Header</template>
+    <template slot="content">First Accordion Content</template>
+  </badger-accordion-item>
 
-    <badger-accordion-item>
-        <template slot="header">Second Accordion Header</template>    
-        <template slot="content">Second Accordion Content</template>  
-    </badger-accordion-item>
+  <badger-accordion-item>
+    <template slot="header">Second Accordion Header</template>
+    <template slot="content">Second Accordion Content</template>
+  </badger-accordion-item>
 </badger-accordion>
 ```
 
@@ -65,21 +66,24 @@ Options can be implemented by component property "option".
 
 ```html
 <badger-accordion :options="{...}">
-    ...
+  ...
 </badger-accordion>
 ```
+
 A list of available options could be found in the badger-accordion repository
 
 https://github.com/stuartjnelson/badger-accordion#options
 
 ## Events
+
 You can handle open/close-Events for each AccordionItem
+
 ```html
 <badger-accordion>
-    <badger-accordion-item @open="onOpenItem" @close="onCloseItem">
-        <template slot="header">First Accordion Header</template>    
-        <template slot="content">First Accordion Content</template>  
-    </badger-accordion-item>
+  <badger-accordion-item @open="onOpenItem" @close="onCloseItem">
+    <template slot="header">First Accordion Header</template>
+    <template slot="content">First Accordion Content</template>
+  </badger-accordion-item>
 </badger-accordion>
 ```
 
@@ -95,7 +99,7 @@ methods: {
 }
 ```
 
-Thanks to  [elbojoloco](https://github.com/elbojoloco) for that change.
+Thanks to [elbojoloco](https://github.com/elbojoloco) for that change.
 
 ## Custom state-indicators/-icons
 
@@ -104,18 +108,23 @@ You can easily disable or replace them with images or your favorite icon-font by
 
 #### Set Icons - Basic
 
-*with font-library e.g. font-awesome*
+_with font-library e.g. font-awesome_
+
 ```html
-<badger-accordion :icons="{opened: '<i class="fas fa-chevron-down"></i>', closed: '<i class="fas fa-chevron-up"></i>'}">
+<badger-accordion :icons="{opened: '<i class="fas fa-chevron-down"></i>',
+closed: '<i class="fas fa-chevron-up"></i>'}">
 ```
+
 ```html
 
 ```
 
+_with images_
 
-*with images*
 ```html
-<badger-accordion :icons="{opened: '<img src="opened.png">', closed: '<img src="closed.png">'}">
+<badger-accordion :icons="{opened: '<img src="opened.png" />', closed: '<img
+  src="closed.png"
+/>'}">
 ```
 
 #### Set Icons - Advanced
@@ -124,27 +133,27 @@ Sometimes you may want greater control of your the state icon renders. In this c
 
 ```js
 const MyComponent = {
-    template: `
+  template: `
         <span class="my-icon">{{ opened ? 'I am open' : ' I am closed' }}</span>
     `,
-    props: {
-        opened: {
-            type: Boolean,
-            default: false,
-        },
-    },
-};
+  props: {
+    opened: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
 
 export default {
-    components: {
-        BadgerAccodion,
-        BadgerAccordionItem,
-    },
-    data() {
-        return {
-            iconComponent: MyComponent,
-        };
-    },
+  components: {
+    BadgerAccodion,
+    BadgerAccordionItem
+  },
+  data() {
+    return {
+      iconComponent: MyComponent
+    }
+  }
 }
 ```
 
@@ -155,7 +164,7 @@ export default {
 #### Disable Icons
 
 ```html
-<badger-accordion :icons="false">
+<badger-accordion :icons="false"></badger-accordion>
 ```
 
 ## Methods
@@ -163,11 +172,11 @@ export default {
 All Methods of badger-accordion are also available. Just add a ref to you accordion and you can access them.
 
 ```html
-<badger-accordion ref="myAccordion">
+<badger-accordion ref="myAccordion"></badger-accordion>
 ```
 
 ```javascript
-this.$refs.myAccordion.open(0);
+this.$refs.myAccordion.open(0)
 ```
 
 A list of available methods could be found in the badger-accordion repository

@@ -1,0 +1,48 @@
+.component-badger-accordion {
+  .badger-accordion__panel {
+    max-height: 0;
+  }
+}
+.badger-accordion__panel {
+  max-height: 75vh;
+  overflow: hidden;
+
+  // scss-lint:disable ImportantRule
+  &.-ba-is-hidden {
+    max-height: 0 !important;
+  }
+}
+
+// transition is added via `badger-accordion--initialized` to stop animation on initalition
+.badger-accordion--initialized {
+  .badger-accordion__panel {
+    transition: max-height ease-in-out 0.2s;
+  }
+}
+
+.badger-accordion__header {
+  .js-badger-accordion-header {
+    .badger-accordion-toggle {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+
+      .badger-accordion-title {
+        flex: 0 0 90%;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .badger-toggle-indicator {
+        flex: 0 0 10%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+      }
+    }
+  }
+}

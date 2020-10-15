@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - '8'
+script:
+  - yarn test
+  - yarn build
+install:
+  - yarn install
+branches:
+  only:
+    - master
