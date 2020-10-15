@@ -37,3 +37,9 @@ node_modules/
 /.nvmrc
 /.travis.yml
 /gulpfile.js
+/.idea
+
+# Do not send lock-files
+/package-lock.json
+/yarn.lock
+/yarn-error.log
