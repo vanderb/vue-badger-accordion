@@ -158,6 +158,13 @@ export default {
 <badger-accordion :icons="false">
 ```
 
+
+#### Open single accordion by default
+
+```html
+<badger-accordion :default-open-header-index="1">
+```
+
 ## Methods
 
 All Methods of badger-accordion are also available. Just add a ref to you accordion and you can access them.
