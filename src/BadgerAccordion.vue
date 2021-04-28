@@ -37,6 +37,10 @@
             iconComponent: {
               default: null
             },
+            defaultOpenHeaderIndex: {
+             type: Number,
+              default: null,
+            },
         },
         data() {
             return {
@@ -72,6 +76,11 @@
         },
 
         mounted() {
+            // if the defaultOpenHeaderIndex set then open the accordion when page loads.
+            if (this.defaultOpenHeaderIndex !== null) {
+                this.open(this.defaultOpenHeaderIndex);
+            }
+
             this.$watch(() => {
                 return this.children.length;
             }, (items) => {
